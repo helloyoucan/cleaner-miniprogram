@@ -1,0 +1,11 @@
+<!--pages/createOrder/index.wxml-->
+<view class="page">
+  <tabs activeIndex="1">
+    <scroll-view  style="height:100%;" scroll-y="true">
+      <view style="height:50vh;background:#eee;"></view>
+      <view style="height:50vh;background:#000;"></view>
+      <view style="height:50vh;background:#666;"></view>
+      <view style="height:50vh;background:#800;"></view>
+    </scroll-view>
+  </tabs>
+</view>

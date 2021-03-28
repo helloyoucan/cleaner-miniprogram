@@ -1,0 +1,24 @@
+/* components/tabs/index.wxss */
+.container{
+  height: 100vh;
+  background-color: #eee;
+}
+.tab{
+  font-size: 36rpx;
+  color: #000;
+  text-align: center;
+  background-color: #fff;
+  padding:0 0 8rpx;
+  line-height: 54rpx;
+}
+.underline{
+  margin: 0 auto;
+  height: 8rpx;
+  width: 120rpx;
+  background-color: green;
+  border-radius: 4rpx;
+}
+.tab-content{
+  height: calc(100vh - 70rpx);
+  background-color: green;
+}
