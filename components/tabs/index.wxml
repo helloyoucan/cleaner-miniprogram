@@ -1,7 +1,7 @@
 <!--components/tabs/index.wxml-->
 <view class="container">
-  <view class="weui-flex tab-list">
-    <view class="weui-flex__item tab" wx:for="{{tabs}}" wx:key="title">
+  <view class="tab-list">
+    <view class="tab" wx:for="{{tabs}}" wx:key="title">
       <view>{{item.title}}</view>
       <view wx:if="{{index===activeIndex}}" class="underline"></view>
     </view>

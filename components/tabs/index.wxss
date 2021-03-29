@@ -3,6 +3,9 @@
   height: 100vh;
   background-color: #eee;
 }
+.tab-list{
+  display: flex;
+}
 .tab{
   font-size: 36rpx;
   color: #000;
@@ -10,6 +13,7 @@
   background-color: #fff;
   padding:0 0 8rpx;
   line-height: 54rpx;
+  flex-grow:1;
 }
 .underline{
   margin: 0 auto;

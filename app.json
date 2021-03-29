@@ -2,7 +2,13 @@
   "pages": [
     "pages/createOrder/index",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/aboutUs/index",
+    "pages/orderList/index",
+    "pages/orderDetail/index",
+    "pages/pay/index",
+    "pages/payResult/index",
+    "pages/personal/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,5 +18,7 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "useExtendedLib": {}
+  "useExtendedLib": {
+    "weui": true
+  }
 }
