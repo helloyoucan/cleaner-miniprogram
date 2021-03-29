@@ -1,1 +1,4 @@
 /* pages/createOrder/index.wxss */
+.page-list{
+  background-color: #eee;
+}
