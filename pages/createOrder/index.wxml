@@ -30,7 +30,7 @@
             <textarea bindblur="bindTextAreaBlur" bindinput="formInputChange" data-field="name" class="weui-textarea"
               auto-height placeholder="请输入详细地址" />
             </mp-cell>
-            <mp-cell>
+          <mp-cell>
             <view>预约时间</view>
             <picker  slot="footer"  data-field="time"  bindchange="formInputChange" value="{{timeIndex}}"  range-key="time"range="{{timeList}}">
               <view class="picker">
@@ -66,8 +66,38 @@
             </radio-group>
           </mp-cell>
           <mp-cell>
-                <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="5" title="上传洗衣机照片" tips="图片上传提示"></mp-uploader>
+                <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="3" title="上传洗衣机照片" tips="图片上传提示"></mp-uploader>
             </mp-cell>
+          <mp-cell title="备注信息">
+            <textarea bindblur="bindTextAreaBlur" bindinput="formInputChange" data-field="name" class="weui-textarea"
+              auto-height placeholder="" />
+          </mp-cell>
+        </mp-cells>
+        <mp-cells title="其它">
+          <mp-cell title="基础服务费">
+           <view slot="footer">30元</view>
+          </mp-cell>
+          <mp-cell title="附加服务">
+            <checkbox-group data-field="other" slot="footer"   bindchange="formInputChange">
+              <view> <label class="checkbox"><checkbox value="cb" checked="true"/>选中</label></view>
+              <view><label class="checkbox"><checkbox value="cb" />未选中</label></view>
+          </checkbox-group>
+          </mp-cell>
+          <mp-cell>超出服务范围距离费
+            <view slot="footer">1.2元 ?</view>
+          </mp-cell>
+          <mp-cell title="优惠券">
+              <picker  slot="footer"  data-field="time"  bindchange="formInputChange" value="{{timeIndex}}"  range-key="time"range="{{timeList}}">
+              <view class="picker">
+                {{timeList[timeIndex].time}}
+              </view>
+            </picker>
+          </mp-cell>
+          <mp-cell title="合计">
+            <view slot="footer">
+              31.2元
+            </view>
+          </mp-cell>
         </mp-cells>
       </mp-form>
     </view>
