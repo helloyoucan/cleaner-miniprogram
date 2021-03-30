@@ -1,0 +1,5 @@
+<!--pages/selectBranch/index.wxml-->
+<view>
+  <map class="map" latitude="{{map.latitude}}" longitude="{{map.longitude}}" markers="{{map.markers}}" show-location></map>
+  <image src="../../assets/images/location.png"></image>
+</view>

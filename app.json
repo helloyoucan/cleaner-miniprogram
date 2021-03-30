@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/selectBranch/index",
     "pages/createOrder/index",
     "pages/index/index",
     "pages/logs/logs",
@@ -10,6 +11,11 @@
     "pages/payResult/index",
     "pages/personal/index"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于寻找最近服务网点"
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

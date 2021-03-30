@@ -1,0 +1,4 @@
+/* pages/selectBranch/index.wxss */
+.map{
+  width: 100%;
+}
