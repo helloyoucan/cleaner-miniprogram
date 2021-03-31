@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/selectBranch/index",
+    "pages/coupons/index",
     "pages/createOrder/index",
+    "pages/selectBranch/index",
     "pages/index/index",
     "pages/logs/logs",
     "pages/aboutUs/index",

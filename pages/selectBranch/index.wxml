@@ -1,5 +1,21 @@
 <!--pages/selectBranch/index.wxml-->
-<view>
-  <map class="map" latitude="{{map.latitude}}" longitude="{{map.longitude}}" markers="{{map.markers}}" show-location></map>
-  <image src="../../assets/images/location.png"></image>
+<view class="page">
+  <view class="back-btn" bindtap="goBack"
+    style="height:{{navbarBtn.height}}px;line-height:{{navbarBtn.height}}px;width:{{navbarBtn.height}}px;top:{{navbarBtn.top}}px;left:{{navbarBtn.left}}px;">
+    <mp-icon icon="back" color="black" size="{{navbarBtn.height/3}}"></mp-icon>
+  </view>
+  <map class="map" latitude="{{map.latitude}}" longitude="{{map.longitude}}" markers="{{map.markers}}"
+    circles="{{map.circles}}" show-location></map>
+  <view class="title">服务网点</view>
+  <scroll-view class="branch-list" scroll-y="true">
+    <mp-loading type="circle" show="{{false}}"></mp-loading>
+    <mp-cells>
+      <mp-cell wx:for="{{branchList}}" wx:key="name" wx:key="index">
+        <text>{{item.name}}</text>
+        <text>{{item.contact}}</text>
+        <text>{{item.phone}}</text>
+        <text>{{item.distance}}</text>
+      </mp-cell>
+    </mp-cells>
+  </scroll-view>
 </view>

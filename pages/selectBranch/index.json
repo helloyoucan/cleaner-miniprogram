@@ -1,3 +1,10 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "mp-loading": "weui-miniprogram/loading/loading"
+  },
+  "navigationStyle":"custom",
+  "navigationBarTitleText": "选择附近的服务网点"
 }
