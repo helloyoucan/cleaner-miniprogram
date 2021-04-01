@@ -1,6 +1,6 @@
 <!--pages/createOrder/index.wxml-->
 
-<tabs activeIndex="1">
+<page-tabs activeIndex="1">
   <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
   <scroll-view class="page-list" style="height:100%;" scroll-y="true">
     <view class="page__bd">
@@ -122,4 +122,4 @@
       <button class="weui-btn" type="primary" bindtap="submitForm" disabled="{{!isAgree}}">确定</button>
     </view>
   </scroll-view>
-</tabs>
+</page-tabs>

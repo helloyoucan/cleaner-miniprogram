@@ -1,4 +1,4 @@
-<!--components/tabs/index.wxml-->
+<!--components/page-tabs/index.wxml-->
 <view class="container">
   <view class="tab-list">
     <view class="tab" wx:for="{{tabs}}" wx:key="title">
@@ -7,10 +7,6 @@
     </view>
   </view>
   <view class="tab-content">
-    <swiper class="swiper" current="{{activeIndex}}" bindchange="handleSwiperChange">
-      <swiper-item class="swiper-item" wx:for="{{tabs}}" wx:key="title">
-        <slot name="tab-content-{{index}}"></slot>
-      </swiper-item>
-    </swiper>
+    <slot></slot>
   </view>
 </view>

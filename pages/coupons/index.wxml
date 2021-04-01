@@ -1,2 +1,24 @@
 <!--pages/coupons/index.wxml-->
-<text>优惠券</text>
+<view class="page">
+  <tabs tabs="{{tabs}}">
+    <view slot="tab-content-0">
+      <scroll-view scroll-y="true" class="list">
+        <view class="card">
+          <view class="left">
+            5元
+          </view>
+          <view class="right">
+            <view class="title">
+              新人优惠券
+            </view>
+            <view class="date">
+              有效期:2021-01-21~2022-21-11
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view slot="tab-content-1"> 222</view>
+    <view slot="tab-content-2"> 233322</view>
+  </tabs>
+</view>

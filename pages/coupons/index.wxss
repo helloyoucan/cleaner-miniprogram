@@ -1,1 +1,36 @@
 /* pages/coupons/index.wxss */
+.list {
+  background-color: #eee;
+  padding: 20rpx 25rpx;
+}
+
+.card {
+  border-radius: 15rpx;
+  overflow: hidden;
+  height: 220rpx;
+  display: flex;
+  background-color: #fff;
+  width: 700rpx;
+}
+
+.left {
+  background-color: aqua;
+  width: 250rpx;
+  height: 100%;
+  position: relative;
+}
+
+.left:after {
+  content: '';
+  position: absolute;
+  top: 0rpx;
+  right: -29rpx;
+  width: 15rpx;
+  height: 100%;
+  transform-origin: center left;
+  transform: rotate(180deg);
+  background: radial-gradient(circle, aqua 15rpx, transparent 15rpx);
+  background-size: 30rpx 30rpx;
+}
+
+.right {}
