@@ -1,2 +1,59 @@
 <!--pages/orderDetail/index.wxml-->
-<text>订单详细</text>
+<view class="page">
+	<view class="page__hd">
+		<view class="page__title">未支付</view>
+		<view class="page__desc">15分钟后取消</view>
+	</view>
+	<view class="page__bd">
+		<view class="weui-form-preview">
+			<view class="weui-form-preview__bd">
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">联系人</label>
+					<text class="weui-form-preview__value">xxx</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">联系电话</label>
+					<text class="weui-form-preview__value">12345678910</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">地址</label>
+					<text class="weui-form-preview__value">很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">预约时间</label>
+					<text class="weui-form-preview__value">2021/01/12 22:00-23:00</text>
+				</view>
+			</view>
+		</view>
+		<view class="weui-form-preview__bd">
+			查看洗衣机详细信息
+		</view>
+		<view class="weui-form-preview">
+			<view class="weui-form-preview__bd">
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">附加服务：</label>
+					<text class="weui-form-preview__value">清洁剂+0</text>
+					<text class="weui-form-preview__value">清洁剂+0</text>
+					<text class="weui-form-preview__value">清洁剂+0</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">超出服务范围加收</label>
+					<text class="weui-form-preview__value">1.2元 ？</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">优惠券</label>
+					<text class="weui-form-preview__value">新人优惠券-5</text>
+				</view>
+			</view>
+
+			<view class="weui-form-preview__hd">
+				<label class="weui-form-preview__label">金额合计</label>
+				<em class="weui-form-preview__value">¥2400.00</em>
+			</view>
+			<view class="weui-form-preview__ft">
+				<a class="weui-form-preview__btn weui-form-preview__btn_default">取消</a>
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary">支付</a>
+			</view>
+		</view>
+	</view>
+</view>
