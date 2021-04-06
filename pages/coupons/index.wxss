@@ -14,23 +14,44 @@
 }
 
 .left {
-  background-color: aqua;
   width: 250rpx;
   height: 100%;
   position: relative;
+  background: #07c160;
+  flex-shrink: 0;
+  text-align: center;
+  line-height: 220rpx;
+  font-size: 48rpx;
+  color: #fff;
 }
 
-.left:after {
+ .left:after {
   content: '';
   position: absolute;
   top: 0rpx;
-  right: -29rpx;
-  width: 15rpx;
+  right: -16rpx;
+  width: 8rpx;
   height: 100%;
   transform-origin: center left;
   transform: rotate(180deg);
-  background: radial-gradient(circle, aqua 15rpx, transparent 15rpx);
-  background-size: 30rpx 30rpx;
-}
+  background: radial-gradient(circle, #07c160 8rpx, transparent 8rpx);
+  background-size: 16rpx 16rpx;
+} 
 
-.right {}
+.right {
+  position: relative;
+  display: flex;
+  flex-wrap:wrap;
+  padding: 16rpx 0;
+}
+.title{
+  padding-left: 28rpx;
+  font-size: 36rpx;
+}
+.date{
+  padding-left: 28rpx;
+  align-self:flex-end;
+  font-size: 24rpx;
+  width: 100%;
+  color: #333;
+}

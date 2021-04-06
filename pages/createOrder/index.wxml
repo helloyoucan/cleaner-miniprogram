@@ -91,12 +91,8 @@
           <mp-cell>超出服务范围距离费
             <view slot="footer">1.2元 ?</view>
           </mp-cell>
-          <mp-cell title="优惠券">
-              <picker  slot="footer"  data-field="time"  bindchange="formInputChange" value="{{timeIndex}}"  range-key="time"range="{{timeList}}">
-              <view class="picker">
-                {{timeList[timeIndex].time}}
-              </view>
-            </picker>
+            <mp-cell link value="优惠券">
+            <navigator slot="footer" url="/pages/coupons/index" open-type="navigate">去选择</navigator>
           </mp-cell>
           <mp-cell title="合计">
             <view slot="footer">

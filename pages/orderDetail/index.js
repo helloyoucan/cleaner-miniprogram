@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    pageContainer: {
+      visable: false,
+    }
   },
 
   /**
@@ -62,5 +64,20 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  popup() {
+    this.setData({
+      pageContainer: {
+        visable: true
+      }
+    })
+  },
+  exit() {
+    this.setData({
+      pageContainer: {
+        visable: false
+      }
+    })
   }
 })

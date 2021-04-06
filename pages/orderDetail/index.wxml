@@ -25,7 +25,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="weui-form-preview__bd">
+		<view class="weui-form-preview__bd" bindtap="popup">
 			查看洗衣机详细信息
 		</view>
 		<view class="weui-form-preview">
@@ -56,4 +56,13 @@
 			</view>
 		</view>
 	</view>
+	<page-container 
+  show="{{pageContainer.visable}}"
+	  duration="300"
+  position="right"
+>
+  <view class="detail-page">
+    <button type="primary" bindtap="exit">推出</button>
+  </view>
+</page-container>
 </view>

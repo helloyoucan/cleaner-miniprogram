@@ -14,13 +14,11 @@ Component({
     },
     tabs: {
       type: Array,
-      value: [
-        {
-          title: "tab1",
-        }, {
-          title: "tab2",
-        }
-      ]
+      value: [{
+        title: "tab1",
+      }, {
+        title: "tab2",
+      }]
     }
   },
 
@@ -28,13 +26,26 @@ Component({
    * 组件的初始数据
    */
   data: {
+    _activeIndex:0
+  },
+  created(){
+this.setData({
+  _activeIndex:this.activeIndex
+})
   },
   /**
    * 组件的方法列表
    */
   methods: {
-    handleSwiperChange() {
-
+    handleSwiperChange(e) {
+      this.setData({
+        _activeIndex:e.detail.current
+      })
+    },
+    handleClick(e) {
+      this.setData({
+        _activeIndex:e.currentTarget.dataset.index
+      })
     }
   }
 })

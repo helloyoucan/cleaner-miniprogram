@@ -1,13 +1,13 @@
 <!--components/tabs/index.wxml-->
 <view class="container">
   <view class="tab-list">
-    <view class="tab" wx:for="{{tabs}}" wx:key="title">
+    <view class="tab" wx:for="{{tabs}}" wx:key="title" data-index="{{index}}" bindtap="handleClick">
       <view>{{item.title}}</view>
-      <view wx:if="{{index===activeIndex}}" class="underline"></view>
+      <view class="underline {{index===_activeIndex?'active':''}}"></view>
     </view>
   </view>
   <view class="tab-content">
-    <swiper class="swiper" current="{{activeIndex}}" bindchange="handleSwiperChange">
+    <swiper class="swiper" current="{{_activeIndex}}" bindchange="handleSwiperChange">
       <swiper-item class="swiper-item" wx:for="{{tabs}}" wx:key="title">
         <slot name="tab-content-{{index}}"></slot>
       </swiper-item>
