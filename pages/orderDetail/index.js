@@ -6,7 +6,7 @@ Page({
    */
   data: {
     pageContainer: {
-      visable: false,
+      visable: true,
     }
   },
 
@@ -65,7 +65,9 @@ Page({
   onShareAppMessage: function () {
 
   },
+  onEnter(){
 
+  },
   popup() {
     this.setData({
       pageContainer: {

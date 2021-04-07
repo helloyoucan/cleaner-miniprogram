@@ -56,13 +56,34 @@
 			</view>
 		</view>
 	</view>
-	<page-container 
-  show="{{pageContainer.visable}}"
-	  duration="300"
-  position="right"
->
-  <view class="detail-page">
-    <button type="primary" bindtap="exit">推出</button>
-  </view>
-</page-container>
+	<page-container show="{{pageContainer.visable}}"   bindenter="onEnter" duration="300" position="right">
+		<view class="detail-page">
+			<view class="page__hd">
+				<view class="page__title">洗衣机信息</view>
+			</view>
+			<view class="weui-form-preview__bd">
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">品牌</label>
+					<text class="weui-form-preview__value">xxx</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">类型</label>
+					<text class="weui-form-preview__value">波轮</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">功能</label>
+					<text class="weui-form-preview__value">洗衣+烘干</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">照片</label>
+					<text class="weui-form-preview__value"></text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">备注信息</label>
+					<text class="weui-form-preview__value"></text>
+				</view>
+			</view>
+			<button type="primary" bindtap="exit">确认</button>
+		</view>
+	</page-container>
 </view>
