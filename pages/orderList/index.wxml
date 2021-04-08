@@ -1,2 +1,7 @@
 <!--pages/orderList/index.wxml-->
-<text>订单列表</text>
+<page-tabs activeIndex="2">
+  <scroll-view class="page-list" style="height:100%;" scroll-y="true">
+    
+  </scroll-view>
+</page-tabs>
+

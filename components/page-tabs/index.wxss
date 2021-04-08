@@ -5,6 +5,8 @@
 }
 .tab-list{
   display: flex;
+  height: 70rpx;
+  overflow: hidden;
 }
 .tab{
   font-size: 36rpx;
@@ -23,6 +25,6 @@
   border-radius: 4rpx;
 }
 .tab-content{
-  height: calc(100vh - 62rpx);
+  height: calc(100vh - 70rpx);
   background-color: green;
 }

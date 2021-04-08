@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/orderList/index",
     "pages/orderDetail/index",
     "pages/createOrder/index",
     "pages/coupons/index",
@@ -7,7 +8,6 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/aboutUs/index",
-    "pages/orderList/index",
     "pages/pay/index",
     "pages/payResult/index",
     "pages/personal/index"

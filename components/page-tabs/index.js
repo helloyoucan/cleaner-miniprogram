@@ -19,19 +19,19 @@ Component({
   data: {
     tabs: [{
       title: "我们",
-      path: ""
+      path: "/pages/aboutUs/index"
     },
     {
       title: "下单",
-      path: ""
+      path: "/pages/createOrder/index"
     },
     {
       title: "订单",
-      path: ""
+      path: "/pages/orderList/index"
     },
     {
       title: "个人",
-      path: ""
+      path: "/pages/personal/index"
     },
     ]
   },

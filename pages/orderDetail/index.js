@@ -6,7 +6,7 @@ Page({
    */
   data: {
     pageContainer: {
-      visable: true,
+      visable: false,
     }
   },
 

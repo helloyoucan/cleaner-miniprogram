@@ -1,10 +1,10 @@
 <!--components/page-tabs/index.wxml-->
 <view class="container">
   <view class="tab-list">
-    <view class="tab" wx:for="{{tabs}}" wx:key="title">
+    <navigator class="tab" wx:for="{{tabs}}" wx:key="title" url="{{item.path}}" open-type="navigate">
       <view>{{item.title}}</view>
       <view wx:if="{{index===activeIndex}}" class="underline"></view>
-    </view>
+    </navigator>
   </view>
   <view class="tab-content">
     <slot></slot>
