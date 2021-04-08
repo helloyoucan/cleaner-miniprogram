@@ -1,16 +1,12 @@
 {
   "pages": [
-    "pages/orderList/index",
+    "pages/index/index",
     "pages/orderDetail/index",
-    "pages/createOrder/index",
     "pages/coupons/index",
     "pages/selectBranch/index",
-    "pages/index/index",
     "pages/logs/logs",
-    "pages/aboutUs/index",
     "pages/pay/index",
-    "pages/payResult/index",
-    "pages/personal/index"
+    "pages/payResult/index"
   ],
   "permission": {
     "scope.userLocation": {

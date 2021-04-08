@@ -6,7 +6,7 @@
       <view class="underline {{index===_activeIndex?'active':''}}"></view>
     </view>
   </view>
-  <view class="tab-content">
+  <view class="tab-content" wx:if="{{_activeIndex>-1}}">
     <swiper class="swiper" current="{{_activeIndex}}" bindchange="handleSwiperChange">
       <swiper-item class="swiper-item" wx:for="{{tabs}}" wx:key="title">
         <slot name="tab-content-{{index}}"></slot>

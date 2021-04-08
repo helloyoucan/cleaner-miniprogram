@@ -26,12 +26,21 @@ Component({
    * 组件的初始数据
    */
   data: {
-    _activeIndex:0
+    _activeIndex: -1
   },
   created(){
-this.setData({
-  _activeIndex:this.activeIndex
-})
+    
+  },
+  lifetimes: {
+    attached: function() {
+      // 在组件实例进入页面节点树时执行
+      this.setData({
+        _activeIndex: this.data.activeIndex
+      })
+    },
+    detached: function() {
+      // 在组件实例被从页面节点树移除时执行
+    },
   },
   /**
    * 组件的方法列表
@@ -39,12 +48,12 @@ this.setData({
   methods: {
     handleSwiperChange(e) {
       this.setData({
-        _activeIndex:e.detail.current
+        _activeIndex: e.detail.current
       })
     },
     handleClick(e) {
       this.setData({
-        _activeIndex:e.currentTarget.dataset.index
+        _activeIndex: e.currentTarget.dataset.index
       })
     }
   }

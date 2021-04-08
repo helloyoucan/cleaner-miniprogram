@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "createOrder":"../../components/createOrder",
     "tabs":"../../components/tabs"
   }
 }

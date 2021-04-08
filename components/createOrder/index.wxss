@@ -1,0 +1,7 @@
+/* components/createOrder/index.wxss */
+.container{
+  height: 100%;
+}
+.page-list{
+  background-color: #eee;
+}

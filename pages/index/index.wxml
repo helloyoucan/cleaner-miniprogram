@@ -1,4 +1,7 @@
 <!--index.wxml-->
 <view class="page">
-  <tabs></tabs>
+  <tabs tabs="{{tabs}}" activeIndex="{{activeIndex}}">
+    <createOrder slot="tab-content-1"></createOrder>
+  </tabs>
+
 </view>

@@ -1,6 +1,6 @@
 {
+  "component": true,
   "usingComponents": {
-    "page-tabs": "../../components/page-tabs",
     "mp-form-page": "weui-miniprogram/form-page/form-page",
     "mp-form": "weui-miniprogram/form/form",
     "mp-toptips": "weui-miniprogram/toptips/toptips",
