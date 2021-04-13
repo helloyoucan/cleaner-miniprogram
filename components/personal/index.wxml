@@ -1,2 +1,17 @@
 <!--components/personal/index.wxml-->
-<text>components/personal/index.wxml</text>
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page__hd">
+    <view class="page__title">头像</view>
+    <view class="page__desc">微信昵称</view>
+  </view>
+  <view class="page__bd">
+    <mp-cells>
+      <mp-cell link url="/pages/coupons/index" value="优惠券">
+      </mp-cell>
+      <mp-cell>
+        <view>客服电话</view>
+        <view slot="footer" bindtap="handleTabKeFu">{{phone}}</view>
+      </mp-cell>
+    </mp-cells>
+  </view>
+</view>

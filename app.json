@@ -1,12 +1,11 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/payResult/index",
     "pages/orderDetail/index",
     "pages/coupons/index",
     "pages/selectBranch/index",
-    "pages/logs/logs",
-    "pages/pay/index",
-    "pages/payResult/index"
+    "pages/logs/logs"
   ],
   "permission": {
     "scope.userLocation": {

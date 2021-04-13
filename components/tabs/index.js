@@ -21,7 +21,13 @@ Component({
       }]
     }
   },
-
+  observers: {
+    activeIndex: function(activeIndex) {
+      this.setData({
+        _activeIndex:activeIndex
+      })
+    }
+  },
   /**
    * 组件的初始数据
    */

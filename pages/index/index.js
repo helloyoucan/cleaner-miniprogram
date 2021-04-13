@@ -9,7 +9,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
-    activeIndex: 2,
+    activeIndex: -1,
     tabs: [{
       title: "我们",
     }, {
@@ -20,10 +20,12 @@ Page({
       title: "个人",
     }]
   },
-  onLoad() {
+  onLoad(options) {
     if (wx.getUserProfile) {
+      const activeIndex = options.tabIndex || 1
       this.setData({
-        canIUseGetUserProfile: true
+        canIUseGetUserProfile: true,
+        activeIndex
       })
     }
   },

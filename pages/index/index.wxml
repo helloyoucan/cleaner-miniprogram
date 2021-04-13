@@ -2,6 +2,8 @@
 <view class="page">
   <tabs tabs="{{tabs}}" activeIndex="{{activeIndex}}">
     <createOrder slot="tab-content-1"></createOrder>
+    <orderList slot="tab-content-2"></orderList>
+    <personal slot="tab-content-3"></personal>
   </tabs>
 
 </view>

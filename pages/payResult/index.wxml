@@ -1,2 +1,21 @@
 <!--pages/payResult/index.wxml-->
-<text>支付结果</text>
+<view class="page">
+  <mp-msg type="success" title="支付成功">
+    <view slot="desc">请耐心等待清洁战士接单
+    </view>
+    <view slot="extend">
+      <view>若预约时间前12小时仍无战士接单，系统将自动取消订单。</view>
+    </view>
+    <view slot="handle">
+      <navigator slot="footer" url="/pages/index/index?tabIndex=2" open-type="redirect">
+        <button class="weui-btn" type="primary">返回</button>
+      </navigator>
+    </view>
+    <!-- <view slot="footer">
+            <view class="weui-footer__links">
+                <navigator url="" class="weui-footer__link">底部链接文本</navigator>
+            </view>
+            <view class="weui-footer__text">Copyright © 2008-2016 weui.io</view>
+        </view> -->
+  </mp-msg>
+</view>

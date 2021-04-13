@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "createOrder":"../../components/createOrder",
+    "orderList":"../../components/orderList",
+    "personal":"../../components/personal",
     "tabs":"../../components/tabs"
   }
 }
