@@ -1,4 +1,10 @@
 // pages/selectBranch/index.js
+import {
+  getBranch
+} from '../../api/index'
+import {
+  getRegion
+} from '../../api/baiduMap'
 const branchList = [{
     latitude: 23.02295,
     longitude: 113.12192,
@@ -94,7 +100,7 @@ Page({
     wx.getLocation({
       type: 'wgs84',
       success: (res) => {
-        console.log(res, this.data.map)
+        // console.log(res, this.data.map)
         const circles = this.data.branchList.map(item => ({
           latitude: item.latitude,
           longitude: item.longitude,
@@ -125,8 +131,27 @@ Page({
             markers
           }
         })
+        getRegion({
+          lat: res.latitude,
+          log: res.longitude
+        }).then(res => {
+          // todo
+          console.log(res)
+          getBranch({
+            province: res.address_component.province,
+            city: res.address_component.city,
+            area: res.address_component.district,
+          }).then(res => {
+            if (res.code == 0) {
+              console.log(res)
+            }
+          })
+        })
+
+
       }
     })
+
   },
   goBack() {
     wx.navigateBack()
@@ -154,7 +179,7 @@ Page({
   },
   layoutNavbarBtn() {
     const navbarBtn = wx.getMenuButtonBoundingClientRect()
-    console.log( wx.getSystemInfoSync().windowWidth , navbarBtn)
+    // console.log(wx.getSystemInfoSync().windowWidth, navbarBtn)
     this.setData({
       navbarBtn: {
         ...navbarBtn,

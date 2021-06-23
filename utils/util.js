@@ -15,18 +15,41 @@ const formatNumber = n => {
 }
 const BASE_URL = "http://127.0.0.1:8080";
 
-function request(method, {
+const request = (method, {
   path,
   data
-}) {
-  return new Promise((resolve, reject) => {
+}) => {
+  return new Promise((resolve, reject) =>
     wx.request({
       method,
       url: BASE_URL + path,
       data,
       success(resp) {
-        console.log(resp)
-        resolve(resp)
+        // console.log(resp)
+        resolve(resp.data)
+      },
+      fail(err) {
+        console.log(err)
+        reject(err)
+      }
+    })
+  )
+}
+const requestBaiduMap = (method, {
+  path,
+  data
+}) => {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      method,
+      url: "https://apis.map.qq.com" + path,
+      data: {
+        ...data,
+        key: "PSLBZ-Y6GWU-SQOVF-BPOJK-IESTV-TSBZV"
+      },
+      success(resp) {
+        // console.log(resp)
+        resolve(resp.data.result)
       },
       fail(err) {
         console.log(err)
@@ -41,7 +64,14 @@ const httpApi = {
   Delete: (payload) => request('delete', payload),
   Put: (payload) => request('put', payload),
 }
+const httpBaiduMap = {
+  Get: (payload) => requestBaiduMap('get', payload),
+  Post: (payload) => requestBaiduMap('post', payload),
+  Delete: (payload) => requestBaiduMap('delete', payload),
+  Put: (payload) => requestBaiduMap('put', payload),
+}
 module.exports = {
   formatTime,
-  httpApi
+  httpApi,
+  httpBaiduMap
 }
