@@ -9,16 +9,18 @@ export const getSession = code => httpApi.Get({
   }
 })
 //获取所有服务网点
-export const getBranch = ({
-  province,
-  city,
-  area
-}) => httpApi.Get({
+/**
+ * 
+ * @param {[]number} longitude 经度范围
+ * @param {*} latitude 
+ * @returns 
+ */
+export const getBranch = (lng_range, lat_range) => httpApi.Get({
   path: "/wx/branch",
-  // todo 中文文字变乱码了
   data: {
-    province,
-    city,
-    area
+    min_lng:lng_range[0],
+    max_lng:lng_range[1],
+    min_lat:lat_range[0],
+    max_lat:lat_range[1],
   }
 })

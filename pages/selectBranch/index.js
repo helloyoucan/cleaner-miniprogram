@@ -2,73 +2,6 @@
 import {
   getBranch
 } from '../../api/index'
-import {
-  getRegion
-} from '../../api/baiduMap'
-const branchList = [{
-    latitude: 23.02295,
-    longitude: 113.12192,
-    name: '网点1',
-    contact: '张生',
-    phone: 15603011304,
-  },
-  {
-    latitude: 23.03586,
-    longitude: 113.12192,
-    name: '网点2',
-    contact: '张生',
-    phone: 15603011304,
-  },
-  {
-    latitude: 23.04287,
-    longitude: 113.12192,
-    name: '网点3',
-    contact: '张生',
-    phone: 15603011304,
-  },
-  {
-    latitude: 23.05388,
-    longitude: 113.12192,
-    name: '网点4',
-    contact: '张生',
-    phone: 15603011304,
-  },
-  {
-    latitude: 23.06489,
-    longitude: 113.12192,
-    name: '网点5',
-    contact: '张生',
-    phone: 15603011304,
-  },
-  {
-    latitude: 23.05388,
-    longitude: 113.12192,
-    name: '网点4',
-    contact: '张生',
-    phone: 15603011304,
-  },
-  {
-    latitude: 23.06489,
-    longitude: 113.12192,
-    name: '网点5',
-    contact: '张生',
-    phone: 15603011304,
-  },
-  {
-    latitude: 23.05388,
-    longitude: 113.12192,
-    name: '网点4',
-    contact: '张生',
-    phone: 15603011304,
-  },
-  {
-    latitude: 23.06489,
-    longitude: 113.12192,
-    name: '网点5',
-    contact: '张生',
-    phone: 15603011304,
-  },
-]
 Page({
 
   /**
@@ -83,75 +16,82 @@ Page({
       bottom: 0,
       right: 0
     },
-    branchList,
+    branchList: [],
     map: {
       longitude: 0,
       latitude: 0,
       scale: 16, //16->100m
       markers: [],
-      circles: []
-    }
+      circles: [],
+    },
+    mapContext: null
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.layoutNavbarBtn();
+    this.setData({ mapContext: wx.createMapContext("map", this) })
     wx.getLocation({
       type: 'wgs84',
       success: (res) => {
-        // console.log(res, this.data.map)
-        const circles = this.data.branchList.map(item => ({
-          latitude: item.latitude,
-          longitude: item.longitude,
-          color: '#FF0000DD',
-          fillColor: '#7cb5ec88',
-          radius: 200,
-          strokeWidth: 1
-        }));
-        const branchList = this.data.branchList.map(item => ({
-          ...item,
-          distance: this.getDistance(res.latitude, res.longitude, item.latitude, item.longitude)
-        }));
-        const markers = this.data.branchList.map((item, index) => ({
-          id: index,
-          zindex: 99,
-          latitude: item.latitude,
-          longitude: item.longitude,
-          width: '100rpx',
-          height: '100rpx',
-          iconPath: '../../assets/images/location.png'
-        }));
         this.setData({
-          branchList,
           map: {
             latitude: res.latitude,
             longitude: res.longitude,
-            circles,
-            markers
+          }
+        },()=>this.getBranchByRegion())
+      }
+    })
+  },
+  bindregionchange(e) {
+    if (e.type == "end" && e.causedBy != "update") {
+      this.getBranchByRegion();
+    }
+  },
+  /**
+   * 根据视野获取网点
+   */
+  getBranchByRegion() {
+    this.data.mapContext.getRegion({
+      success: ({ southwest, northeast }) => {
+        getBranch([southwest.longitude, northeast.longitude].sort(), [southwest.latitude, northeast.latitude].sort()).then(res => {
+          if (res.code == 0) {
+            const circles = res.data.map(item => ({
+              latitude: item.latitude,
+              longitude: item.longitude,
+              color: '#FF0000DD',
+              fillColor: '#7cb5ec88',
+              radius: item.range,
+              strokeWidth: 1
+            }));
+            const branchList = res.data.map(item => ({
+              ...item,
+              distance: this.getDistance(this.data.map.latitude, this.data.map.longitude, item.latitude, item.longitude)
+            }));
+            const markers = res.data.map((item) => ({
+              id: item.id,
+              zindex: 99,
+              latitude: item.latitude,
+              longitude: item.longitude,
+              width: '50rpx',
+              height: '50rpx',
+            }));
+            this.setData({
+              branchList,
+              map: {
+                ...this.data.map,
+                circles,
+                markers
+              }
+            })
           }
         })
-        getRegion({
-          lat: res.latitude,
-          log: res.longitude
-        }).then(res => {
-          // todo
-          console.log(res)
-          getBranch({
-            province: res.address_component.province,
-            city: res.address_component.city,
-            area: res.address_component.district,
-          }).then(res => {
-            if (res.code == 0) {
-              console.log(res)
-            }
-          })
-        })
-
+      },
+      fail: () => {
 
       }
     })
-
   },
   goBack() {
     wx.navigateBack()
